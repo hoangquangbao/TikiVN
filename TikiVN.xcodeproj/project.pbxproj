@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E450272C0D22007587EA /* TikiVNApp.swift */; };
+		06B6E453272C0D22007587EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E452272C0D22007587EA /* ContentView.swift */; };
+		06B6E455272C0D24007587EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B6E454272C0D24007587EA /* Assets.xcassets */; };
+		06B6E458272C0D24007587EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B6E457272C0D24007587EA /* Preview Assets.xcassets */; };
+		06B6E462272C0D25007587EA /* TikiVNTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E461272C0D25007587EA /* TikiVNTests.swift */; };
+		06B6E46C272C0D25007587EA /* TikiVNUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E46B272C0D25007587EA /* TikiVNUITests.swift */; };
+		06B6E46E272C0D25007587EA /* TikiVNUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E46D272C0D25007587EA /* TikiVNUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		06B6E45E272C0D25007587EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06B6E445272C0D22007587EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6E44C272C0D22007587EA;
+			remoteInfo = TikiVN;
+		};
+		06B6E468272C0D25007587EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 06B6E445272C0D22007587EA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 06B6E44C272C0D22007587EA;
+			remoteInfo = TikiVN;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		06B6E44D272C0D22007587EA /* TikiVN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikiVN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B6E450272C0D22007587EA /* TikiVNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNApp.swift; sourceTree = "<group>"; };
+		06B6E452272C0D22007587EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		06B6E454272C0D24007587EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		06B6E457272C0D24007587EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		06B6E45D272C0D25007587EA /* TikiVNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikiVNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B6E461272C0D25007587EA /* TikiVNTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNTests.swift; sourceTree = "<group>"; };
+		06B6E467272C0D25007587EA /* TikiVNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TikiVNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		06B6E46B272C0D25007587EA /* TikiVNUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNUITests.swift; sourceTree = "<group>"; };
+		06B6E46D272C0D25007587EA /* TikiVNUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		06B6E44A272C0D22007587EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E45A272C0D25007587EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E464272C0D25007587EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		06B6E444272C0D22007587EA = {
+			isa = PBXGroup;
+			children = (
+				06B6E44F272C0D22007587EA /* TikiVN */,
+				06B6E460272C0D25007587EA /* TikiVNTests */,
+				06B6E46A272C0D25007587EA /* TikiVNUITests */,
+				06B6E44E272C0D22007587EA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		06B6E44E272C0D22007587EA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				06B6E44D272C0D22007587EA /* TikiVN.app */,
+				06B6E45D272C0D25007587EA /* TikiVNTests.xctest */,
+				06B6E467272C0D25007587EA /* TikiVNUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		06B6E44F272C0D22007587EA /* TikiVN */ = {
+			isa = PBXGroup;
+			children = (
+				06B6E450272C0D22007587EA /* TikiVNApp.swift */,
+				06B6E452272C0D22007587EA /* ContentView.swift */,
+				06B6E454272C0D24007587EA /* Assets.xcassets */,
+				06B6E456272C0D24007587EA /* Preview Content */,
+			);
+			path = TikiVN;
+			sourceTree = "<group>";
+		};
+		06B6E456272C0D24007587EA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				06B6E457272C0D24007587EA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		06B6E460272C0D25007587EA /* TikiVNTests */ = {
+			isa = PBXGroup;
+			children = (
+				06B6E461272C0D25007587EA /* TikiVNTests.swift */,
+			);
+			path = TikiVNTests;
+			sourceTree = "<group>";
+		};
+		06B6E46A272C0D25007587EA /* TikiVNUITests */ = {
+			isa = PBXGroup;
+			children = (
+				06B6E46B272C0D25007587EA /* TikiVNUITests.swift */,
+				06B6E46D272C0D25007587EA /* TikiVNUITestsLaunchTests.swift */,
+			);
+			path = TikiVNUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		06B6E44C272C0D22007587EA /* TikiVN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06B6E471272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVN" */;
+			buildPhases = (
+				06B6E449272C0D22007587EA /* Sources */,
+				06B6E44A272C0D22007587EA /* Frameworks */,
+				06B6E44B272C0D22007587EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TikiVN;
+			productName = TikiVN;
+			productReference = 06B6E44D272C0D22007587EA /* TikiVN.app */;
+			productType = "com.apple.product-type.application";
+		};
+		06B6E45C272C0D25007587EA /* TikiVNTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06B6E474272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVNTests" */;
+			buildPhases = (
+				06B6E459272C0D25007587EA /* Sources */,
+				06B6E45A272C0D25007587EA /* Frameworks */,
+				06B6E45B272C0D25007587EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06B6E45F272C0D25007587EA /* PBXTargetDependency */,
+			);
+			name = TikiVNTests;
+			productName = TikiVNTests;
+			productReference = 06B6E45D272C0D25007587EA /* TikiVNTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		06B6E466272C0D25007587EA /* TikiVNUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 06B6E477272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVNUITests" */;
+			buildPhases = (
+				06B6E463272C0D25007587EA /* Sources */,
+				06B6E464272C0D25007587EA /* Frameworks */,
+				06B6E465272C0D25007587EA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				06B6E469272C0D25007587EA /* PBXTargetDependency */,
+			);
+			name = TikiVNUITests;
+			productName = TikiVNUITests;
+			productReference = 06B6E467272C0D25007587EA /* TikiVNUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		06B6E445272C0D22007587EA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					06B6E44C272C0D22007587EA = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					06B6E45C272C0D25007587EA = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 06B6E44C272C0D22007587EA;
+					};
+					06B6E466272C0D25007587EA = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 06B6E44C272C0D22007587EA;
+					};
+				};
+			};
+			buildConfigurationList = 06B6E448272C0D22007587EA /* Build configuration list for PBXProject "TikiVN" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 06B6E444272C0D22007587EA;
+			productRefGroup = 06B6E44E272C0D22007587EA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				06B6E44C272C0D22007587EA /* TikiVN */,
+				06B6E45C272C0D25007587EA /* TikiVNTests */,
+				06B6E466272C0D25007587EA /* TikiVNUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		06B6E44B272C0D22007587EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6E458272C0D24007587EA /* Preview Assets.xcassets in Resources */,
+				06B6E455272C0D24007587EA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E45B272C0D25007587EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E465272C0D25007587EA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		06B6E449272C0D22007587EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6E453272C0D22007587EA /* ContentView.swift in Sources */,
+				06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E459272C0D25007587EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6E462272C0D25007587EA /* TikiVNTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		06B6E463272C0D25007587EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B6E46C272C0D25007587EA /* TikiVNUITests.swift in Sources */,
+				06B6E46E272C0D25007587EA /* TikiVNUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		06B6E45F272C0D25007587EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06B6E44C272C0D22007587EA /* TikiVN */;
+			targetProxy = 06B6E45E272C0D25007587EA /* PBXContainerItemProxy */;
+		};
+		06B6E469272C0D25007587EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 06B6E44C272C0D22007587EA /* TikiVN */;
+			targetProxy = 06B6E468272C0D25007587EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		06B6E46F272C0D25007587EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		06B6E470272C0D25007587EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		06B6E472272C0D25007587EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TikiVN/Preview Content\"";
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		06B6E473272C0D25007587EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"TikiVN/Preview Content\"";
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		06B6E475272C0D25007587EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TikiVN.app/TikiVN";
+			};
+			name = Debug;
+		};
+		06B6E476272C0D25007587EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVNTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TikiVN.app/TikiVN";
+			};
+			name = Release;
+		};
+		06B6E478272C0D25007587EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TikiVN;
+			};
+			name = Debug;
+		};
+		06B6E479272C0D25007587EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84ZVHZY7F4;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.QuangBao.TikiVNUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TikiVN;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		06B6E448272C0D22007587EA /* Build configuration list for PBXProject "TikiVN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06B6E46F272C0D25007587EA /* Debug */,
+				06B6E470272C0D25007587EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06B6E471272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06B6E472272C0D25007587EA /* Debug */,
+				06B6E473272C0D25007587EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06B6E474272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVNTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06B6E475272C0D25007587EA /* Debug */,
+				06B6E476272C0D25007587EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		06B6E477272C0D25007587EA /* Build configuration list for PBXNativeTarget "TikiVNUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				06B6E478272C0D25007587EA /* Debug */,
+				06B6E479272C0D25007587EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 06B6E445272C0D22007587EA /* Project object */;
+}
