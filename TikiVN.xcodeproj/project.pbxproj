@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		06AC7638272C1A3100361E84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7637272C1A3100361E84 /* Data.swift */; };
+		06AC763A272C33FE00361E84 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7639272C33FE00361E84 /* HomeViewModel.swift */; };
+		06AC763C272C7A3B00361E84 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC763B272C7A3B00361E84 /* Home.swift */; };
 		06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E450272C0D22007587EA /* TikiVNApp.swift */; };
 		06B6E453272C0D22007587EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E452272C0D22007587EA /* ContentView.swift */; };
 		06B6E455272C0D24007587EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B6E454272C0D24007587EA /* Assets.xcassets */; };
@@ -36,6 +38,8 @@
 
 /* Begin PBXFileReference section */
 		06AC7637272C1A3100361E84 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
+		06AC7639272C33FE00361E84 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		06AC763B272C7A3B00361E84 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		06B6E44D272C0D22007587EA /* TikiVN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikiVN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B6E450272C0D22007587EA /* TikiVNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNApp.swift; sourceTree = "<group>"; };
 		06B6E452272C0D22007587EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 		06AC7634272C176C00361E84 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				06AC763B272C7A3B00361E84 /* Home.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -83,6 +88,7 @@
 		06AC7635272C177600361E84 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				06AC7639272C33FE00361E84 /* HomeViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -286,7 +292,9 @@
 			files = (
 				06B6E453272C0D22007587EA /* ContentView.swift in Sources */,
 				06AC7638272C1A3100361E84 /* Data.swift in Sources */,
+				06AC763C272C7A3B00361E84 /* Home.swift in Sources */,
 				06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */,
+				06AC763A272C33FE00361E84 /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
