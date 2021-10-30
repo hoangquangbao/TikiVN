@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Foundation
 
 struct Data: Codable {
     let status: Int?
@@ -26,6 +25,7 @@ struct DataClass: Codable {
 }
 
 struct Datum: Codable, Identifiable {
+    let badges: [Badge]?
     let badgesNew: [BadgesNew]?
     let brandName: String?
     let discount, discountRate, favouriteCount: Double?
@@ -37,7 +37,7 @@ struct Datum: Codable, Identifiable {
     let isFlower, isGiftCard: Bool?
     let listPrice: Double?
     let name: String?
-    let optionColor: [OptionColor]?
+//    let optionColor: [OptionColor]?
     let orderCount, originalPrice, price, productsetID: Int?
     let quantitySold: QuantitySold?
     let ratingAverage: Double?
@@ -53,9 +53,11 @@ struct Datum: Codable, Identifiable {
 //    let type: DatumType?
     let type: String?
     let urlAttendantInputForm, urlKey, urlPath: String?
-    let badges: [Badge]?
+    let bundleDeal: Bool?
+    let freegiftItems: [FreegiftItem]?
 
     enum CodingKeys: String, CodingKey {
+        case badges
         case badgesNew = "badges_new"
         case brandName = "brand_name"
         case discount
@@ -68,7 +70,7 @@ struct Datum: Codable, Identifiable {
         case isGiftCard = "is_gift_card"
         case listPrice = "list_price"
         case name
-        case optionColor = "option_color"
+//        case optionColor = "option_color"
         case orderCount = "order_count"
         case originalPrice = "original_price"
         case price
@@ -88,7 +90,8 @@ struct Datum: Codable, Identifiable {
         case urlAttendantInputForm = "url_attendant_input_form"
         case urlKey = "url_key"
         case urlPath = "url_path"
-        case badges
+        case bundleDeal = "bundle_deal"
+        case freegiftItems = "freegift_items"
     }
 }
 
@@ -110,15 +113,16 @@ struct BadgesNew: Codable {
 //    let placement: Placement?
     let placement: String?
 //    let type: BadgesNewType?
-    let type: String?
     let text, textColor: String?
+    let type: String?
 
     enum CodingKeys: String, CodingKey {
         case code, icon
         case iconHeight = "icon_height"
         case iconWidth = "icon_width"
-        case placement, type, text
+        case placement, text
         case textColor = "text_color"
+        case type
     }
 }
 
@@ -133,6 +137,18 @@ struct BadgesNew: Codable {
 //    case serviceBadge = "service_badge"
 //    case underPriceIcon = "under_price_icon"
 //}
+
+struct FreegiftItem: Codable {
+    let id, masterID: Int?
+    let name: String?
+    let thumbnail: String?
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case masterID = "masterId"
+        case name, thumbnail
+    }
+}
 
 struct Inventory: Codable {
 //    let fulfillmentType: FulfillmentType?
@@ -152,25 +168,25 @@ struct Inventory: Codable {
 //    case available = "available"
 //}
 
-struct OptionColor: Codable {
-    let displayName: String?
-    let isDefault, listPrice, originalPrice, price: Int?
-    let smallThumbnail: String?
-    let spid: Int?
-    let thumbnail: String?
-    let urlPath: String?
-
-    enum CodingKeys: String, CodingKey {
-        case displayName = "display_name"
-        case isDefault = "is_default"
-        case listPrice = "list_price"
-        case originalPrice = "original_price"
-        case price
-        case smallThumbnail = "small_thumbnail"
-        case spid, thumbnail
-        case urlPath = "url_path"
-    }
-}
+//struct OptionColor: Codable {
+//    let displayName: String?
+//    let isDefault, listPrice, originalPrice, price: Int?
+//    let smallThumbnail: String?
+//    let spid: Int?
+//    let thumbnail: String?
+//    let urlPath: String?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case displayName = "display_name"
+//        case isDefault = "is_default"
+//        case listPrice = "list_price"
+//        case originalPrice = "original_price"
+//        case price
+//        case smallThumbnail = "small_thumbnail"
+//        case spid, thumbnail
+//        case urlPath = "url_path"
+//    }
+//}
 
 struct QuantitySold: Codable {
     let text: String?

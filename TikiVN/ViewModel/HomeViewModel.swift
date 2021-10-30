@@ -10,58 +10,44 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
-    @Published var product : [Datum] = []
+    //For get JSON data
+    @Published var items : [Datum] = []
+    
     //Tab bar
     @Published var currentTab: Tab = .Home
     
-//    func parse() {
-//
-//            let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
-//
-//            guard let url = URL(string: jsonUrlString) else { return }
-//
-//            URLSession.shared.dataTask(with: url) {
-//                data, response, err in
-//
-//                if err != nil {
-//                    print(err?.localizedDescription)
-//                    return
-//                }
-//
-//                do {
-//                    let result = try  JSONDecoder().decode(Course.self, from: data!)
-//
-//                    print(result)
-//                } catch {
-//
-//                }
-//            }
-//            .resume()
-//}
+    //Item
+    @Published var currentProduct : Datum?
+    @Published var showDetail = false
+    //@Published var notGetDataFromJSON = false
+
+
     
     func parse() {
 
         let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
 
-        guard let url = URL(string: jsonUrlString) else { return }
+        guard let url = URL(string: jsonUrlString)
+        else {
+            return
+        }
 
-        URLSession.shared.dataTask(with: url) {
+        URLSession.shared.dataTask(with: url) { [self]
             data, response, err in
 
-            if err != nil {
-                //print(err?.localizedDescription)
-                return
-            }
+//            if err != nil {
+//                self.notGetDataFromJSON = true
+//                return
+//            }
 
             do {
                 let result = try  JSONDecoder().decode(Data.self, from: data!)
                 
 //                self.product = (result.data?.data)!
                 DispatchQueue.main.async {
-                    self.product = (result.data?.data)!
+                    self.items = (result.data?.data)!
+                    print(items)
                 }
-
-                print(result)
             } catch {
 
             }

@@ -6,12 +6,11 @@
 //
 
 import SwiftUI
+import SDWebImageSwiftUI
 
 struct Home: View {
     
     @EnvironmentObject var baseViewModel : HomeViewModel
-    
-    var parse : [Datum] = []
     
     var body: some View {
         
@@ -41,13 +40,46 @@ struct Home: View {
                         .frame(width: 100)
             )
             
+//            if baseViewModel.notGetDataFromJSON {
+//                
+//                VStack(spacing: 0) {
+//                    
+//                    Text("Tiki.vn")
+//                        .padding(.top)
+//                        .font(.system(size: 20, weight: .bold))
+//                        .foregroundColor(.blue)
+//                    
+//                    Text("Quí khách vui lòng quay lại sau ít phút. Dịch vụ đang tạm ngưng để nâng cấp hệ thống")
+//                        .padding()
+//                        .font(.system(size: 15, weight: .bold))
+//                        .foregroundColor(.black)
+//                }
+//                .frame(width: UIScreen.main.bounds.width - 100)
+//                .background(Color.white)
+//                .cornerRadius(10)
+//            }
             
             
+            //Product View
+            let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
             
-            
-            
-            
-            
+            //Show Products
+            ScrollView(.vertical, showsIndicators: false){
+                
+                LazyVGrid(columns: columns, spacing: 10) {
+                    
+                    ForEach(baseViewModel.items){ item in
+                        
+                        CardView(item: item)
+                            .onTapGesture {
+                                withAnimation {
+                                    baseViewModel.currentProduct = item
+                                    baseViewModel.showDetail = true
+                                }
+                            }
+                    }
+                }
+            }
         }
         .onAppear {
             baseViewModel.parse()
@@ -55,11 +87,20 @@ struct Home: View {
     }
     
     
-    func CardView(product: Datum) -> some View {
+    func CardView(item: Datum) -> some View {
         
         VStack(spacing: 8){
             
-            Text(product.brandName!)
+            //            Image(product.productImage)
+            //                .resizable()
+            //                .aspectRatio(contentMode: .fit)
+            //                .frame(height: 250)
+            WebImage(url: URL(string: item.thumbnailURL!))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
+            
+            Text(item.name!)
                 .fontWeight(.semibold)
                 .lineLimit(2)
                 .padding(.top)

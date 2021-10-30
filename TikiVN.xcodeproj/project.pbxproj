@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		068F3250272DB59200AB61D4 /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 068F324F272DB59200AB61D4 /* SDWebImageSwiftUI */; };
 		06AC7638272C1A3100361E84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7637272C1A3100361E84 /* Data.swift */; };
 		06AC763A272C33FE00361E84 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7639272C33FE00361E84 /* HomeViewModel.swift */; };
 		06AC763C272C7A3B00361E84 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC763B272C7A3B00361E84 /* Home.swift */; };
@@ -67,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				068F3250272DB59200AB61D4 /* SDWebImageSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -191,6 +193,9 @@
 			dependencies = (
 			);
 			name = TikiVN;
+			packageProductDependencies = (
+				068F324F272DB59200AB61D4 /* SDWebImageSwiftUI */,
+			);
 			productName = TikiVN;
 			productReference = 06B6E44D272C0D22007587EA /* TikiVN.app */;
 			productType = "com.apple.product-type.application";
@@ -263,6 +268,9 @@
 				Base,
 			);
 			mainGroup = 06B6E444272C0D22007587EA;
+			packageReferences = (
+				068F324E272DB59200AB61D4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 06B6E44E272C0D22007587EA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -663,6 +671,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		068F324E272DB59200AB61D4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		068F324F272DB59200AB61D4 /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 068F324E272DB59200AB61D4 /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 06B6E445272C0D22007587EA /* Project object */;
 }
