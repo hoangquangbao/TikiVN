@@ -25,7 +25,7 @@ struct DataClass: Codable {
     }
 }
 
-struct Datum: Codable {
+struct Datum: Codable, Identifiable {
     let badgesNew: [BadgesNew]?
     let brandName: String?
     let discount, discountRate, favouriteCount: Double?

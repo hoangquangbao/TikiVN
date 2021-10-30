@@ -10,6 +10,12 @@
 		06AC7638272C1A3100361E84 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7637272C1A3100361E84 /* Data.swift */; };
 		06AC763A272C33FE00361E84 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7639272C33FE00361E84 /* HomeViewModel.swift */; };
 		06AC763C272C7A3B00361E84 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC763B272C7A3B00361E84 /* Home.swift */; };
+		06AC7640272C8C7400361E84 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC763F272C8C7400361E84 /* HomeView.swift */; };
+		06AC7642272C8C9100361E84 /* Trend.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7641272C8C9100361E84 /* Trend.swift */; };
+		06AC7644272C8C9E00361E84 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7643272C8C9E00361E84 /* Category.swift */; };
+		06AC7646272C8CAB00361E84 /* Personal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7645272C8CAB00361E84 /* Personal.swift */; };
+		06AC7648272C8EFF00361E84 /* CustomCurveShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC7647272C8EFF00361E84 /* CustomCurveShape.swift */; };
+		06AC764F272CA77900361E84 /* CodableBundleExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AC764E272CA77900361E84 /* CodableBundleExtension.swift */; };
 		06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E450272C0D22007587EA /* TikiVNApp.swift */; };
 		06B6E453272C0D22007587EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06B6E452272C0D22007587EA /* ContentView.swift */; };
 		06B6E455272C0D24007587EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06B6E454272C0D24007587EA /* Assets.xcassets */; };
@@ -40,6 +46,12 @@
 		06AC7637272C1A3100361E84 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		06AC7639272C33FE00361E84 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		06AC763B272C7A3B00361E84 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		06AC763F272C8C7400361E84 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		06AC7641272C8C9100361E84 /* Trend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trend.swift; sourceTree = "<group>"; };
+		06AC7643272C8C9E00361E84 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		06AC7645272C8CAB00361E84 /* Personal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Personal.swift; sourceTree = "<group>"; };
+		06AC7647272C8EFF00361E84 /* CustomCurveShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCurveShape.swift; sourceTree = "<group>"; };
+		06AC764E272CA77900361E84 /* CodableBundleExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodableBundleExtension.swift; sourceTree = "<group>"; };
 		06B6E44D272C0D22007587EA /* TikiVN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TikiVN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06B6E450272C0D22007587EA /* TikiVNApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikiVNApp.swift; sourceTree = "<group>"; };
 		06B6E452272C0D22007587EA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -80,7 +92,12 @@
 		06AC7634272C176C00361E84 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				06AC763F272C8C7400361E84 /* HomeView.swift */,
+				06AC7647272C8EFF00361E84 /* CustomCurveShape.swift */,
 				06AC763B272C7A3B00361E84 /* Home.swift */,
+				06AC7641272C8C9100361E84 /* Trend.swift */,
+				06AC7643272C8C9E00361E84 /* Category.swift */,
+				06AC7645272C8CAB00361E84 /* Personal.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +116,14 @@
 				06AC7637272C1A3100361E84 /* Data.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		06AC7649272CA6A100361E84 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				06AC764E272CA77900361E84 /* CodableBundleExtension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		06B6E444272C0D22007587EA = {
@@ -124,6 +149,7 @@
 		06B6E44F272C0D22007587EA /* TikiVN */ = {
 			isa = PBXGroup;
 			children = (
+				06AC7649272CA6A100361E84 /* Extension */,
 				06AC7636272C177F00361E84 /* Model */,
 				06AC7635272C177600361E84 /* ViewModel */,
 				06AC7634272C176C00361E84 /* View */,
@@ -291,10 +317,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				06B6E453272C0D22007587EA /* ContentView.swift in Sources */,
+				06AC764F272CA77900361E84 /* CodableBundleExtension.swift in Sources */,
 				06AC7638272C1A3100361E84 /* Data.swift in Sources */,
+				06AC7648272C8EFF00361E84 /* CustomCurveShape.swift in Sources */,
 				06AC763C272C7A3B00361E84 /* Home.swift in Sources */,
+				06AC7646272C8CAB00361E84 /* Personal.swift in Sources */,
+				06AC7642272C8C9100361E84 /* Trend.swift in Sources */,
+				06AC7640272C8C7400361E84 /* HomeView.swift in Sources */,
 				06B6E451272C0D22007587EA /* TikiVNApp.swift in Sources */,
 				06AC763A272C33FE00361E84 /* HomeViewModel.swift in Sources */,
+				06AC7644272C8C9E00361E84 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

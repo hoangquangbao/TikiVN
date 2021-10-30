@@ -11,11 +11,7 @@ struct ContentView: View {
     
     var userHomeViewModel = HomeViewModel()
     var body: some View {
-        Text("Hello, world!")
-            .padding()
-        
-//        userHomeViewModel.fetchData()
-        
+        HomeView()
     }
 }
 
