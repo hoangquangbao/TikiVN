@@ -15,6 +15,6 @@ struct Trend: View {
 
 struct Trend_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Trend()
     }
 }

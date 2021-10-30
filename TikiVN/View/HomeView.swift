@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var baseData = HomeViewModel()
+   
     
     //Hiding Tab bar...
     init(){
@@ -18,6 +19,8 @@ struct HomeView: View {
     }
     
     var body: some View {
+        
+        
         TabView(selection: $baseData.currentTab){
             
             

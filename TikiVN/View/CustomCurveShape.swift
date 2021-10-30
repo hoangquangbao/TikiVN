@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CustomCurveShape: Shape {
     
+    
     func path(in rect: CGRect) -> Path {
         
         return Path{path in

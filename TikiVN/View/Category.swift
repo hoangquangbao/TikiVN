@@ -15,6 +15,6 @@ struct Category: View {
 
 struct Category_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView()
+        Category()
     }
 }

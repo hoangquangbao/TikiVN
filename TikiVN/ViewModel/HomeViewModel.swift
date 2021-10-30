@@ -10,78 +10,64 @@ import SwiftUI
 
 class HomeViewModel: ObservableObject {
     
-    @Published var product : [Datum]?
-
-    
+    @Published var product : [Datum] = []
     //Tab bar
     @Published var currentTab: Tab = .Home
     
-    
-//    func fetchData() {
+//    func parse() {
 //
-//        let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
+//            let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
 //
-//        guard let url = URL(string: jsonUrlString) else { return }
+//            guard let url = URL(string: jsonUrlString) else { return }
 //
-//        URLSession.shared.dataTask(with: url) { (data, response, err) in
+//            URLSession.shared.dataTask(with: url) {
+//                data, response, err in
 //
-//            guard let data = data else { return }
-//
-//            do {
-////                guard let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as? [String: Any] else { return }
-////                //Cách này phải viết thêm hàm khởi tạo
-////                let course = Data(json: json)
-//
-//
-//                let course = try  JSONDecoder().decode(Data.self, from: data)
-//
-//                DispatchQueue.main.async {
-//                    self.product = course.data?.data
+//                if err != nil {
+//                    print(err?.localizedDescription)
+//                    return
 //                }
 //
-//                //print(course.data?.data)
-//            } catch let jsonErr {
+//                do {
+//                    let result = try  JSONDecoder().decode(Course.self, from: data!)
 //
-//                print("Error serializing json:", jsonErr)
+//                    print(result)
+//                } catch {
 //
-//            }
-//        }
-//        .resume()
-//    }
-    
-    
-    
-//    func fetchData() {
-//        
-//        let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
-//        
-//        guard let url = URL(string: jsonUrlString) else { return }
-//        
-//        URLSession.shared.dataTask(with: url) { (data, response, err) in
-//            
-//            guard let data = data else { return }
-//            
-//            do {
-//
-//                let course = try  JSONDecoder().decode(Data.self, from: data)
-//                
-//                DispatchQueue.main.async {
-//                    self.product = course.data?.data
 //                }
-//                
-//                //print(course.data?.data)
-//            } catch let jsonErr {
-//                
-//                print("Error serializing json:", jsonErr)
-//                
 //            }
-//        }
-//        .resume()
-//    }
+//            .resume()
+//}
     
-    
-    
-    
+    func parse() {
+
+        let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
+
+        guard let url = URL(string: jsonUrlString) else { return }
+
+        URLSession.shared.dataTask(with: url) {
+            data, response, err in
+
+            if err != nil {
+                //print(err?.localizedDescription)
+                return
+            }
+
+            do {
+                let result = try  JSONDecoder().decode(Data.self, from: data!)
+                
+//                self.product = (result.data?.data)!
+                DispatchQueue.main.async {
+                    self.product = (result.data?.data)!
+                }
+
+                print(result)
+            } catch {
+
+            }
+        }
+        .resume()
+    }
 }
 
 
@@ -92,4 +78,5 @@ enum Tab: String{
     case Category = "category"
     case Personal = "personal"
 }
+
 

@@ -6,23 +6,12 @@
 //
 
 import SwiftUI
-/*
-    @EnvironmentObject var baseViewModel : HomeViewModel
-    var prd : [Datum] = []
-
-        VStack {
-            ForEach(baseViewModel.product!, id: \.self){prd in
-                Text(prd.name!)
-            }
-        }
-*/
 
 struct Home: View {
     
     @EnvironmentObject var baseViewModel : HomeViewModel
     
-    let product : [Datum]? = Bundle.main.fetchData()
-    
+    var parse : [Datum] = []
     
     var body: some View {
         
@@ -53,53 +42,15 @@ struct Home: View {
             )
             
             
-//            contents = baseViewModel.product
-            //Product View
             
-//            do {
-//
-//                guard var contents = baseViewModel.product else { break }
-//
-//            } catch {
-//
-//                break
-//            }
             
-//            if var contents = product  {
-//
-//            let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
-//
-//            ScrollView(.vertical, showsIndicators: false){
-//                //Grid View....
-//                LazyVGrid(columns: columns, spacing: 10) {
-//
-//                    //Product....
-//                    ForEach(product){product in
-//                        CardView(product: product)
-//                    }
-//
-//                }
-//                .padding()
-//                .padding(.bottom,30)
-//            }
-//        }
             
-
-            let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
             
-            ScrollView(.vertical, showsIndicators: false){
-                //Grid View....
-                LazyVGrid(columns: columns, spacing: 10) {
-                    
-                    //Product....
-                    ForEach(product!){product in
-                        CardView(product: product)
-                    }
-                    
-                }
-                .padding()
-                .padding(.bottom,30)
-            }
+            
+            
+        }
+        .onAppear {
+            baseViewModel.parse()
         }
     }
     
