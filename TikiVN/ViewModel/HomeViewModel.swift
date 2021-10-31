@@ -11,7 +11,11 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     
     //For get JSON data
-    @Published var items : [Datum] = []
+    @Published var data : [Datum] = []
+    @Published var metaData : MetaData?
+    @Published var metaDataItems : [Item] = []
+
+
     
     //Tab bar
     @Published var currentTab: Tab = .Home
@@ -19,8 +23,7 @@ class HomeViewModel: ObservableObject {
     //Item
     @Published var currentProduct : Datum?
     @Published var showDetail = false
-//    @Published var notGetDataFromJSON = false
-    
+    @Published var notGetDataFromJSON = false
     
     
     func parse() {
@@ -31,24 +34,29 @@ class HomeViewModel: ObservableObject {
         else {
             return
         }
-        
         URLSession.shared.dataTask(with: url) { 
-            data, response, err in
+            dataFromServer, response, err in
 //            if err != nil {
 //                //                self.notGetDataFromJSON = true
 //                print(err as Any)
 //                return
 //            }
-            guard let data = data
-            else { return }
+            guard let tempData = dataFromServer
+            else {
+                self.notGetDataFromJSON = true
+                return
+            }
             
-            do { let result = try JSONDecoder().decode(Data.self, from: data)
+            do { let result = try JSONDecoder().decode(Data.self, from: tempData)
                 
                 DispatchQueue.main.async {
-                    self.items = (result.data?.data)!
+                    self.data = (result.data?.data)!
+                    self.metaData = result.data?.metaData
+                    self.metaDataItems = (result.data?.metaData?.items)!
                 }
             } catch {
-                print("Error")
+                self.notGetDataFromJSON = true
+                //print("Error")
             }
         }
         .resume()

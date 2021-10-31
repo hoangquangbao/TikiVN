@@ -40,24 +40,28 @@ struct Home: View {
                         .frame(width: 100)
             )
             
-            //            if baseViewModel.notGetDataFromJSON {
-            //
-            //                VStack(spacing: 0) {
-            //
-            //                    Text("Tiki.vn")
-            //                        .padding(.top)
-            //                        .font(.system(size: 20, weight: .bold))
-            //                        .foregroundColor(.blue)
-            //
-            //                    Text("Quí khách vui lòng quay lại sau ít phút. Dịch vụ đang tạm ngưng để nâng cấp hệ thống")
-            //                        .padding()
-            //                        .font(.system(size: 15, weight: .bold))
-            //                        .foregroundColor(.black)
-            //                }
-            //                .frame(width: UIScreen.main.bounds.width - 100)
-            //                .background(Color.white)
-            //                .cornerRadius(10)
-            //            }
+            if baseViewModel.notGetDataFromJSON {
+                
+                VStack(spacing: 0) {
+                    
+                    Text("Tiki.vn")
+                        .padding(.top)
+                        .font(.system(size: 20, weight: .bold))
+                        .foregroundColor(.blue)
+                    
+                    Text("Quí khách vui lòng quay lại sau ít phút. Dịch vụ đang tạm ngưng để nâng cấp hệ thống.")
+                        .padding()
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundColor(.black)
+                    
+                    Text("hotro.tiki.vn | Hotline: 1900-6035")
+                        .font(.system(size: 10, weight: .bold))
+                        .foregroundColor(.gray.opacity(0.7))
+                }
+                .frame(width: UIScreen.main.bounds.width - 100)
+                .background(Color.white)
+                .cornerRadius(10)
+            }
             
             //Product View
             let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 2)
@@ -67,7 +71,7 @@ struct Home: View {
                 
                 LazyVGrid(columns: columns, spacing: 4) {
                     
-                    ForEach(baseViewModel.items){ item in
+                    ForEach(baseViewModel.data){ item in
                         
                         CardView(item: item)
                             .onTapGesture {
@@ -147,8 +151,8 @@ struct Home: View {
                                 .frame(height: 8, alignment: .trailing)
                         }
                     }
-                    .padding(.top, 5)
-//                    .padding(.horizontal, 5)
+                        .padding(.top, 5)
+                    //                    .padding(.horizontal, 5)
                     ,alignment: .top
                 )
             
