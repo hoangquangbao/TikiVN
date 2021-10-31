@@ -1,4 +1,4 @@
-# TikiApplication
+# TikiVN App
 
 # Một số trang web hỗ trợ trong quá trình làm:
 1. Định hình cấu trúc file JSON: https://app.quicktype.io/
