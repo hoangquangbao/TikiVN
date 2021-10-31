@@ -107,6 +107,7 @@ struct Badge: Codable {
 //}
 
 struct BadgesNew: Codable {
+//    let code: Code?
     let code: String?
     let icon: String?
     let iconHeight, iconWidth: Int?

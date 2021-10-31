@@ -14,7 +14,7 @@ struct Home: View {
     
     var body: some View {
         
-        VStack{
+        VStack(spacing: 15){
             
             HStack{
                 Button {
@@ -61,12 +61,12 @@ struct Home: View {
             
             
             //Product View
-            let columns = Array(repeating: GridItem(.flexible(), spacing: 10), count: 2)
+            let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 2)
             
             //Show Products
             ScrollView(.vertical, showsIndicators: false){
                 
-                LazyVGrid(columns: columns, spacing: 10) {
+                LazyVGrid(columns: columns, spacing: 4) {
                     
                     ForEach(baseViewModel.items){ item in
                         
@@ -81,6 +81,8 @@ struct Home: View {
                 }
             }
         }
+        .padding(4)
+        .padding(.bottom, 60)
         .onAppear {
             baseViewModel.parse()
         }
@@ -89,25 +91,27 @@ struct Home: View {
     
     func CardView(item: Datum) -> some View {
         
-        VStack(spacing: 8){
+        VStack(spacing: 2){
             
-            //            Image(product.productImage)
-            //                .resizable()
-            //                .aspectRatio(contentMode: .fit)
-            //                .frame(height: 250)
+//            HStack {
+//                if(item.badgesNew. == "freeship_tikifast"){
+//                    
+//                }
+//            }
+            
             WebImage(url: URL(string: item.thumbnailURL!))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 250)
             
             Text(item.name!)
-                .fontWeight(.semibold)
+//                .fontWeight(.semibold)
                 .lineLimit(2)
                 .padding(.top)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .padding(5)
-        //.background(Color.gray.opacity(0.1), in: RoundedRectangle(cornerRadius: 12))
+        .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
     }
 }
 
