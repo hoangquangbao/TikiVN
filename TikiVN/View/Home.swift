@@ -91,11 +91,11 @@ struct Home: View {
     
     func CardView(item: Datum) -> some View {
         
-        VStack(spacing: 2){
+        VStack(alignment: .leading, spacing: 3){
             
 //            HStack {
 //                if(item.badgesNew. == "freeship_tikifast"){
-//                    
+//
 //                }
 //            }
             
@@ -104,22 +104,40 @@ struct Home: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 250)
             
-            Text(item.name!)
-//                .fontWeight(.semibold)
-                .lineLimit(2)
-                .padding(.top)
-                .frame(maxWidth: .infinity, alignment: .leading)
-            
-            HStack{
+            VStack(alignment: .leading, spacing: 6) {
+                
+                Text(item.name!)
+                    .font(.system(size: 12, weight: .semibold))
+//                    .font(.system(size: 14))
+                    .lineLimit(2)
+                    .lineSpacing(3)
+                
+                HStack(spacing: 1){
 
-                ForEach(1...5, id: \.self){index in
-                    Image(systemName: "star.fill")
+                    HStack(spacing: 0) {
+                        ForEach(1...5, id: \.self){index in
+                            Image(systemName: "star.fill")
+                                .font(.system(size: 10))
+                                .foregroundColor(Int(item.ratingAverage!) >= index ? .yellow : .gray.opacity(0.2))
+                        }
+                    }
+                    
+                    Text(" (\(Int(item.ratingAverage!)).0) |")
                         .font(.system(size: 9))
-                        .foregroundColor(item.ratingAverage! >= index ? .yellow : .gray.opacity(0.2))
+                        .foregroundColor(.gray)
+                    
+                    Text((item.quantitySold?.text)!)
+                        .font(.system(size: 12, weight: .bold))
+                        .foregroundColor(.gray)
                 }
-            }
+                
+                Text("\(item.price!) đ")
+                    .font(.system(size: 15, weight: .semibold))
+                
+            }.offset(y: -15)
         }
         .padding(5)
+//        .padding(.bottom,5)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
     }
 }

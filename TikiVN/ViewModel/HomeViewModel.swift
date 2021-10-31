@@ -19,7 +19,7 @@ class HomeViewModel: ObservableObject {
     //Item
     @Published var currentProduct : Datum?
     @Published var showDetail = false
-    //@Published var notGetDataFromJSON = false
+//    @Published var notGetDataFromJSON = false
     
     
     
@@ -32,18 +32,20 @@ class HomeViewModel: ObservableObject {
             return
         }
         
-        URLSession.shared.dataTask(with: url) { [self]
+        URLSession.shared.dataTask(with: url) { 
             data, response, err in
-            if err != nil {
-                //                self.notGetDataFromJSON = true
-                print(err as Any)
-                return
-            }
-            do {
-                let result = try  JSONDecoder().decode(Data.self, from: data!)
+//            if err != nil {
+//                //                self.notGetDataFromJSON = true
+//                print(err as Any)
+//                return
+//            }
+            guard let data = data
+            else { return }
+            
+            do { let result = try JSONDecoder().decode(Data.self, from: data)
+                
                 DispatchQueue.main.async {
                     self.items = (result.data?.data)!
-                    print(items)
                 }
             } catch {
                 print("Error")

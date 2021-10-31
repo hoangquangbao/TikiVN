@@ -1,17 +1,20 @@
 //
-//  Data.swift
+//  Data2.swift
 //  TikiVN
 //
-//  Created by Quang Bao on 29/10/2021.
+//  Created by Quang Bao on 31/10/2021.
 //
 
 import SwiftUI
+import Foundation
 
+// MARK: - Welcome
 struct Data: Codable {
     let status: Int?
     let data: DataClass?
 }
 
+// MARK: - DataClass
 struct DataClass: Codable {
     let metaData: MetaData?
     let data: [Datum]?
@@ -24,25 +27,24 @@ struct DataClass: Codable {
     }
 }
 
+// MARK: - Datum
 struct Datum: Codable, Identifiable {
     let badges: [Badge]?
     let badgesNew: [BadgesNew]?
     let brandName: String?
-    let discount, discountRate, favouriteCount: Double?
+    let discount, discountRate, favouriteCount: Int?
     let hasEbook: Bool?
     let id: Int?
     let inventory: Inventory?
 //    let inventoryStatus: InventoryStatus?
     let inventoryStatus: String?
     let isFlower, isGiftCard: Bool?
-    let listPrice: Double?
+    let listPrice: Int?
     let name: String?
-    let optionColor: [OptionColor]?
     let orderCount, originalPrice, price, productsetID: Int?
     let quantitySold: QuantitySold?
-    let ratingAverage: Int?
+    let ratingAverage: Double?
     let reviewCount: Int?
-    //salable_type: Tất cả biến này đều emplty trong JSON file. Nhớ test thử xem nó có ảnh hưởng đến get data hay truy xuất trong App hay không?
     let salableType: String?
     let sellerProductID: Int?
     let shortDescription, sku: String?
@@ -54,7 +56,7 @@ struct Datum: Codable, Identifiable {
     let type: String?
     let urlAttendantInputForm, urlKey, urlPath: String?
     let bundleDeal: Bool?
-//    let freegiftItems: [FreegiftItem]?
+    let freegiftItems: [FreegiftItem]?
 
     enum CodingKeys: String, CodingKey {
         case badges
@@ -70,7 +72,6 @@ struct Datum: Codable, Identifiable {
         case isGiftCard = "is_gift_card"
         case listPrice = "list_price"
         case name
-        case optionColor = "option_color"
         case orderCount = "order_count"
         case originalPrice = "original_price"
         case price
@@ -91,21 +92,24 @@ struct Datum: Codable, Identifiable {
         case urlKey = "url_key"
         case urlPath = "url_path"
         case bundleDeal = "bundle_deal"
-//        case freegiftItems = "freegift_items"
+        case freegiftItems = "freegift_items"
     }
 }
 
+// MARK: - Badge
 struct Badge: Codable {
 //    let code, text: Code?
     let code, text: String?
 }
 
 //enum Code: String, Codable {
+//    case exclusivePrice = "exclusive_price"
 //    case freeshipTikifast = "freeship_tikifast"
 //    case isBestPriceGuaranteed = "is_best_price_guaranteed"
 //    case tikinow = "tikinow"
 //}
 
+// MARK: - BadgesNew
 struct BadgesNew: Codable {
 //    let code: Code?
     let code: String?
@@ -113,8 +117,11 @@ struct BadgesNew: Codable {
     let iconHeight, iconWidth: Int?
 //    let placement: Placement?
     let placement: String?
+//    let text: Text?
+    let text: String?
+//    let textColor: TextColor?
+    let textColor: String?
 //    let type: BadgesNewType?
-    let text, textColor: String?
     let type: String?
 
     enum CodingKeys: String, CodingKey {
@@ -128,29 +135,43 @@ struct BadgesNew: Codable {
 }
 
 //enum Placement: String, Codable {
+//    case benefits = "benefits"
 //    case bottom = "bottom"
 //    case service = "service"
 //    case underPrice = "under_price"
 //}
 
+//enum Text: String, Codable {
+//    case empty = ""
+//    case giáHộiViênTikiNOW233730 = "Giá hội viên TikiNOW: 233.730 ₫"
+//    case giáHộiViênTikiNOW398400 = "Giá hội viên TikiNOW: 398.400 ₫"
+//}
+
+//enum TextColor: String, Codable {
+//    case the009900 = "#009900"
+//}
+
 //enum BadgesNewType: String, Codable {
+//    case benefitsBadge = "benefits_badge"
 //    case iconBadge = "icon_badge"
 //    case serviceBadge = "service_badge"
 //    case underPriceIcon = "under_price_icon"
 //}
 
-//struct FreegiftItem: Codable {
-//    let id, masterID: Int?
-//    let name: String?
-//    let thumbnail: String?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case id
-//        case masterID = "masterId"
-//        case name, thumbnail
-//    }
-//}
+// MARK: - FreegiftItem
+struct FreegiftItem: Codable {
+    let id, masterID: Int?
+    let name: String?
+    let thumbnail: String?
 
+    enum CodingKeys: String, CodingKey {
+        case id
+        case masterID = "masterId"
+        case name, thumbnail
+    }
+}
+
+// MARK: - Inventory
 struct Inventory: Codable {
 //    let fulfillmentType: FulfillmentType?
     let fulfillmentType: String?
@@ -169,31 +190,13 @@ struct Inventory: Codable {
 //    case available = "available"
 //}
 
-struct OptionColor: Codable {
-    let displayName: String?
-    let isDefault, listPrice, originalPrice, price: Int?
-    let smallThumbnail: String?
-    let spid: Int?
-    let thumbnail: String?
-    let urlPath: String?
-
-    enum CodingKeys: String, CodingKey {
-        case displayName = "display_name"
-        case isDefault = "is_default"
-        case listPrice = "list_price"
-        case originalPrice = "original_price"
-        case price
-        case smallThumbnail = "small_thumbnail"
-        case spid, thumbnail
-        case urlPath = "url_path"
-    }
-}
-
+// MARK: - QuantitySold
 struct QuantitySold: Codable {
     let text: String?
     let value: Int?
 }
 
+// MARK: - StockItem
 struct StockItem: Codable {
     let maxSaleQty, minSaleQty: Int?
     let preorderDate: Bool?
@@ -209,8 +212,10 @@ struct StockItem: Codable {
 
 //enum DatumType: String, Codable {
 //    case configurable = "configurable"
+//    case simple = "simple"
 //}
 
+// MARK: - MetaData
 struct MetaData: Codable {
     let type, moreLinkText: String?
     let moreLink: String?
@@ -231,9 +236,10 @@ struct MetaData: Codable {
     }
 }
 
+// MARK: - Item
 struct Item: Codable {
     let title: String?
-    let categoryID: Double?
+    let categoryID: Int?
     let images: [String]?
 
     enum CodingKeys: String, CodingKey {
@@ -243,9 +249,6 @@ struct Item: Codable {
     }
 }
 
+// MARK: - TitleIcon
 //struct TitleIcon: Codable {
 //}
-
-
-
-
