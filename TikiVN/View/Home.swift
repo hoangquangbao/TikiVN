@@ -40,25 +40,24 @@ struct Home: View {
                         .frame(width: 100)
             )
             
-//            if baseViewModel.notGetDataFromJSON {
-//                
-//                VStack(spacing: 0) {
-//                    
-//                    Text("Tiki.vn")
-//                        .padding(.top)
-//                        .font(.system(size: 20, weight: .bold))
-//                        .foregroundColor(.blue)
-//                    
-//                    Text("Quí khách vui lòng quay lại sau ít phút. Dịch vụ đang tạm ngưng để nâng cấp hệ thống")
-//                        .padding()
-//                        .font(.system(size: 15, weight: .bold))
-//                        .foregroundColor(.black)
-//                }
-//                .frame(width: UIScreen.main.bounds.width - 100)
-//                .background(Color.white)
-//                .cornerRadius(10)
-//            }
-            
+            //            if baseViewModel.notGetDataFromJSON {
+            //
+            //                VStack(spacing: 0) {
+            //
+            //                    Text("Tiki.vn")
+            //                        .padding(.top)
+            //                        .font(.system(size: 20, weight: .bold))
+            //                        .foregroundColor(.blue)
+            //
+            //                    Text("Quí khách vui lòng quay lại sau ít phút. Dịch vụ đang tạm ngưng để nâng cấp hệ thống")
+            //                        .padding()
+            //                        .font(.system(size: 15, weight: .bold))
+            //                        .foregroundColor(.black)
+            //                }
+            //                .frame(width: UIScreen.main.bounds.width - 100)
+            //                .background(Color.white)
+            //                .cornerRadius(10)
+            //            }
             
             //Product View
             let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 2)
@@ -88,32 +87,81 @@ struct Home: View {
         }
     }
     
-    
     func CardView(item: Datum) -> some View {
         
         VStack(alignment: .leading, spacing: 3){
             
-//            HStack {
-//                if(item.badgesNew. == "freeship_tikifast"){
-//
-//                }
-//            }
+            //            ZStack(alignment: .top) {
+            //
+            //                WebImage(url: URL(string: item.thumbnailURL!))
+            //                    .resizable()
+            //                    .aspectRatio(contentMode: .fit)
+            //                    .frame(height: 250)
+            //
+            //                HStack{
+            //
+            //                    if item.badges?[0].code == "tikinow" {
+            //                        Image("tikinow")
+            //                            .resizable()
+            //                            .aspectRatio(contentMode: .fit)
+            //                            .frame(height: 12, alignment: .leading)
+            //                    }
+            //
+            //                    Spacer()
+            //
+            //                    Button(action: {
+            //
+            //                    }) { Image(systemName: "plus")
+            //                            .padding(2)
+            //                            .foregroundColor(.white)
+            //                            .background(Color.pink)
+            //                            .clipShape(Circle())
+            //                            .frame(height: 8, alignment: .trailing)
+            //                    }
+            //                }
+            //            }
             
             WebImage(url: URL(string: item.thumbnailURL!))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 250)
+                .overlay(
+                    HStack{
+                        
+                        if item.badges?[0].code == "tikinow" {
+                            Image("tikinow")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(height: 12, alignment: .leading)
+                        }
+                        
+                        Spacer()
+                        
+                        Button(action: {
+                            
+                        }) { Image(systemName: "plus")
+                                .padding(2)
+                                .foregroundColor(.white)
+                                .background(Color.pink)
+                                .clipShape(Circle())
+                                .frame(height: 8, alignment: .trailing)
+                        }
+                    }
+                    .padding(.top, 5)
+//                    .padding(.horizontal, 5)
+                    ,alignment: .top
+                )
             
             VStack(alignment: .leading, spacing: 6) {
                 
                 Text(item.name!)
                     .font(.system(size: 12, weight: .semibold))
-//                    .font(.system(size: 14))
+                //                    .font(.system(size: 14))
                     .lineLimit(2)
                     .lineSpacing(3)
                 
                 HStack(spacing: 1){
-
+                    
                     HStack(spacing: 0) {
                         ForEach(1...5, id: \.self){index in
                             Image(systemName: "star.fill")
@@ -137,7 +185,7 @@ struct Home: View {
             }.offset(y: -15)
         }
         .padding(5)
-//        .padding(.bottom,5)
+        //        .padding(.bottom,5)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
     }
 }
