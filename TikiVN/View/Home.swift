@@ -111,7 +111,7 @@ struct Home: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             
             HStack{
-                
+
                 ForEach(1...5, id: \.self){index in
                     Image(systemName: "star.fill")
                         .font(.system(size: 9))

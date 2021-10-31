@@ -37,7 +37,7 @@ struct Datum: Codable, Identifiable {
     let isFlower, isGiftCard: Bool?
     let listPrice: Double?
     let name: String?
-//    let optionColor: [OptionColor]?
+    let optionColor: [OptionColor]?
     let orderCount, originalPrice, price, productsetID: Int?
     let quantitySold: QuantitySold?
     let ratingAverage: Int?
@@ -54,7 +54,7 @@ struct Datum: Codable, Identifiable {
     let type: String?
     let urlAttendantInputForm, urlKey, urlPath: String?
     let bundleDeal: Bool?
-    let freegiftItems: [FreegiftItem]?
+//    let freegiftItems: [FreegiftItem]?
 
     enum CodingKeys: String, CodingKey {
         case badges
@@ -70,7 +70,7 @@ struct Datum: Codable, Identifiable {
         case isGiftCard = "is_gift_card"
         case listPrice = "list_price"
         case name
-//        case optionColor = "option_color"
+        case optionColor = "option_color"
         case orderCount = "order_count"
         case originalPrice = "original_price"
         case price
@@ -91,7 +91,7 @@ struct Datum: Codable, Identifiable {
         case urlKey = "url_key"
         case urlPath = "url_path"
         case bundleDeal = "bundle_deal"
-        case freegiftItems = "freegift_items"
+//        case freegiftItems = "freegift_items"
     }
 }
 
@@ -139,17 +139,17 @@ struct BadgesNew: Codable {
 //    case underPriceIcon = "under_price_icon"
 //}
 
-struct FreegiftItem: Codable {
-    let id, masterID: Int?
-    let name: String?
-    let thumbnail: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id
-        case masterID = "masterId"
-        case name, thumbnail
-    }
-}
+//struct FreegiftItem: Codable {
+//    let id, masterID: Int?
+//    let name: String?
+//    let thumbnail: String?
+//
+//    enum CodingKeys: String, CodingKey {
+//        case id
+//        case masterID = "masterId"
+//        case name, thumbnail
+//    }
+//}
 
 struct Inventory: Codable {
 //    let fulfillmentType: FulfillmentType?
@@ -169,25 +169,25 @@ struct Inventory: Codable {
 //    case available = "available"
 //}
 
-//struct OptionColor: Codable {
-//    let displayName: String?
-//    let isDefault, listPrice, originalPrice, price: Int?
-//    let smallThumbnail: String?
-//    let spid: Int?
-//    let thumbnail: String?
-//    let urlPath: String?
-//
-//    enum CodingKeys: String, CodingKey {
-//        case displayName = "display_name"
-//        case isDefault = "is_default"
-//        case listPrice = "list_price"
-//        case originalPrice = "original_price"
-//        case price
-//        case smallThumbnail = "small_thumbnail"
-//        case spid, thumbnail
-//        case urlPath = "url_path"
-//    }
-//}
+struct OptionColor: Codable {
+    let displayName: String?
+    let isDefault, listPrice, originalPrice, price: Int?
+    let smallThumbnail: String?
+    let spid: Int?
+    let thumbnail: String?
+    let urlPath: String?
+
+    enum CodingKeys: String, CodingKey {
+        case displayName = "display_name"
+        case isDefault = "is_default"
+        case listPrice = "list_price"
+        case originalPrice = "original_price"
+        case price
+        case smallThumbnail = "small_thumbnail"
+        case spid, thumbnail
+        case urlPath = "url_path"
+    }
+}
 
 struct QuantitySold: Codable {
     let text: String?

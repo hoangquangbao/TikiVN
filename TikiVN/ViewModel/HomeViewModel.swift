@@ -20,36 +20,33 @@ class HomeViewModel: ObservableObject {
     @Published var currentProduct : Datum?
     @Published var showDetail = false
     //@Published var notGetDataFromJSON = false
-
-
+    
+    
     
     func parse() {
-
+        
         let jsonUrlString = "https://api.tiki.vn/shopping-trend/api/trendings/hub?cursor=0&limit=20"
-
+        
         guard let url = URL(string: jsonUrlString)
         else {
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { [self]
             data, response, err in
-
-//            if err != nil {
-//                self.notGetDataFromJSON = true
-//                return
-//            }
-
+            if err != nil {
+                //                self.notGetDataFromJSON = true
+                print(err as Any)
+                return
+            }
             do {
                 let result = try  JSONDecoder().decode(Data.self, from: data!)
-                
-//                self.product = (result.data?.data)!
                 DispatchQueue.main.async {
                     self.items = (result.data?.data)!
                     print(items)
                 }
             } catch {
-
+                print("Error")
             }
         }
         .resume()
