@@ -109,6 +109,15 @@ struct Home: View {
                 .lineLimit(2)
                 .padding(.top)
                 .frame(maxWidth: .infinity, alignment: .leading)
+            
+            HStack{
+                
+                ForEach(1...5, id: \.self){index in
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 9))
+                        .foregroundColor(item.ratingAverage! >= index ? .yellow : .gray.opacity(0.2))
+                }
+            }
         }
         .padding(5)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 12))

@@ -40,7 +40,7 @@ struct Datum: Codable, Identifiable {
 //    let optionColor: [OptionColor]?
     let orderCount, originalPrice, price, productsetID: Int?
     let quantitySold: QuantitySold?
-    let ratingAverage: Double?
+    let ratingAverage: Int?
     let reviewCount: Int?
     //salable_type: Tất cả biến này đều emplty trong JSON file. Nhớ test thử xem nó có ảnh hưởng đến get data hay truy xuất trong App hay không?
     let salableType: String?
