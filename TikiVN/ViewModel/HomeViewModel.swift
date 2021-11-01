@@ -15,10 +15,13 @@ class HomeViewModel: ObservableObject {
     @Published var metaData : MetaData?
     @Published var metaDataItems : [Item] = []
 
-
+    @Published var search = ""
     
     //Tab bar
     @Published var currentTab: Tab = .Home
+    
+    //Category tab
+    @Published var categoryTab = ""
     
     //Item
     @Published var currentProduct : Datum?

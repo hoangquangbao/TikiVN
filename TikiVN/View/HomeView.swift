@@ -13,31 +13,26 @@ struct HomeView: View {
    
     
     //Hiding Tab bar...
-    init(){
-        
-        UITabBar.appearance().isHidden = true
-    }
+//    init(){
+//
+//        UITabBar.appearance().isHidden = true
+//    }
     
     var body: some View {
         
         
         TabView(selection: $baseData.currentTab){
-            
-            
-            //            Text("Home!")
             Home()
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
-                    Image("background")
+                    Image("background_color")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()
                 )
                 .tag(Tab.Home)
             
-            
-            //            Text("Trend!")
             Trend()
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -48,27 +43,23 @@ struct HomeView: View {
                         .ignoresSafeArea()
                 )
                 .tag(Tab.Trend)
-            
-            
-            //            Text("Category!")
+
             Category()
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
-                    Image("background")
+                    Image("background_color")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()
                 )
                 .tag(Tab.Category)
             
-            
-            //            Text("Personal!")
             Personal()
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .background(
-                    Image("background")
+                    Image("background_color")
                         .resizable()
                         .aspectRatio(contentMode: .fill)
                         .ignoresSafeArea()
@@ -77,7 +68,6 @@ struct HomeView: View {
         }
         
         .overlay(
-            
             //Custom Tab Bar...
             HStack(spacing: 0){
                 
@@ -91,25 +81,27 @@ struct HomeView: View {
                     
                 } label: {
                     
-                    Image("cart")
+                    Image(systemName: "cart.fill")
                         .resizable()
                         .frame(width: 26, height: 26)
                         .offset(x: -1)
-                        .foregroundColor(.white)
+                        .foregroundColor(.blue)
                         .padding(18)
-                        .background(Color.blue)
+                        .background(.white)
                         .clipShape(Circle())
                 }
-                .offset(y: -30)
+                .offset(y: -25)
                 
                 //Right
                 TabButton(Tab: .Category)
                     .offset(x: 10)
                 TabButton(Tab: .Personal)
             }
+                .offset(y: 20)
                 .background(
                     Color.white.clipShape(CustomCurveShape())
-                        .shadow(color: .gray, radius: 5, x: 0, y: -5)
+                        .offset(y: 20)
+                        .shadow(color: .white, radius: 2, x: 0, y: -5)
                         .edgesIgnoringSafeArea(.bottom)
                 )
             ,alignment: .bottom
@@ -130,7 +122,7 @@ struct HomeView: View {
                 .resizable()
                 .renderingMode(.template)
                 .frame(width: 25, height: 25)
-                .foregroundColor(baseData.currentTab == Tab ? Color.black : Color.gray.opacity(0.5))
+                .foregroundColor(baseData.currentTab == Tab ? Color.blue : Color.gray.opacity(0.5))
                 .frame(maxWidth: .infinity)
         }
     }

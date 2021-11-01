@@ -10,6 +10,7 @@ import SDWebImageSwiftUI
 
 struct Home: View {
     
+    @Namespace var animation
     @EnvironmentObject var baseViewModel : HomeViewModel
     
     var body: some View {
@@ -33,13 +34,16 @@ struct Home: View {
             }
             .foregroundColor(.white)
             .padding(.horizontal)
+            .padding(.top,0)
             
             .overlay(Image("tikilogo")
                         .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100)
+                        .aspectRatio(contentMode: .fit)
+                        .frame(height: 45)
+                        .foregroundColor(.blue)
             )
-            
+        
+//MARK: - Notification while Get Error Data
             if baseViewModel.notGetDataFromJSON {
                 
                 VStack(spacing: 0) {
@@ -63,7 +67,40 @@ struct Home: View {
                 .cornerRadius(10)
             }
             
-            //Product View
+//MARK: - Category Tab
+            
+            ScrollView(.horizontal, showsIndicators: false){
+                
+                HStack(spacing: 0){
+                    
+                    //Segmenttab....
+                    CategoryButton(title: "Thịt, rau củ")
+                    CategoryButton(title: "Bách Hóa")
+                    CategoryButton(title: "Nhà Cửa")
+                    CategoryButton(title: "Thiết Bị Số")
+                    CategoryButton(title: "Điện Thoại")
+                    CategoryButton(title: "Mẹ & Bé")
+                    CategoryButton(title: "Làm Đẹp")
+                    CategoryButton(title: "Gia Dụng")
+                    CategoryButton(title: "Thời Trang Nam")
+                    CategoryButton(title: "Thời Trang Nữ")
+                }
+            }
+            
+//MARK: - Search Product
+//            HStack(spacing: 15){
+//
+//                Image(systemName: "magnifyingglass")
+//                .font(.title2)
+//                .foregroundColor(.gray)
+//
+//                TextField("Bạn tìm gì hôm nay?", text: $baseViewModel.search)
+//            }
+//            .padding(.horizontal)
+//
+            
+//MARK: - Product View
+            
             let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 2)
             
             //Show Products
@@ -85,15 +122,60 @@ struct Home: View {
             }
         }
         .padding(4)
-        .padding(.bottom, 60)
+        .padding(.bottom, 15)
         .onAppear {
             baseViewModel.parse()
         }
     }
     
+//MARK: - func{...} for Category Tab
+    
+    @ViewBuilder
+    func CategoryButton(title: String) -> some View {
+        
+        Button {
+            withAnimation{baseViewModel.categoryTab = title}
+        } label: {
+            
+            HStack(spacing: 8){
+                
+//                Image(systemName: icon)
+//                    .resizable()
+//                    .aspectRatio(contentMode: .fit)
+//                    .frame(width: 27, height: 27)
+//                    .cornerRadius(10)
+                
+                Text(title)
+                    .font(.system(size: 12))
+                    .fontWeight(.bold)
+                    .foregroundColor(.white)
+            }
+            .padding(.vertical,8)
+            .padding(.horizontal,12)
+            .background(
+                
+                ZStack{
+                
+                //Transition Slider....
+                if baseViewModel.categoryTab == title{
+                    
+                    RoundedRectangle(cornerRadius: 5)
+                        .fill(Color.white.opacity(0.3))
+                    
+                    // Dùng để di chuyển hình nền của các Tab
+                        .matchedGeometryEffect(id: "TAB", in: animation)
+
+                }
+            }
+            )
+        }
+    }
+
+//MARK: - func{...} for Product View
+    
     func CardView(item: Datum) -> some View {
         
-        VStack(alignment: .leading, spacing: 3){
+        VStack(alignment: .leading, spacing: 1){
             
             //            ZStack(alignment: .top) {
             //
@@ -136,7 +218,7 @@ struct Home: View {
                             Image("tikinow")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                .frame(height: 12, alignment: .leading)
+                                //.frame(height: 12, alignment: .leading)
                         }
                         
                         Spacer()
@@ -148,9 +230,10 @@ struct Home: View {
                                 .foregroundColor(.white)
                                 .background(Color.pink)
                                 .clipShape(Circle())
-                                .frame(height: 8, alignment: .trailing)
+                                //.frame(height: 8, alignment: .trailing)
                         }
                     }
+                        .frame(maxWidth: .infinity, maxHeight: 12, alignment: .top)
                         .padding(.top, 5)
                     //                    .padding(.horizontal, 5)
                     ,alignment: .top

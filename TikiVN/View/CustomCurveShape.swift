@@ -39,9 +39,3 @@ struct CustomCurveShape: Shape {
     }
 }
 
-
-struct CustomCurveShape_Previews: PreviewProvider {
-    static var previews: some View {
-        CustomCurveShape()
-    }
-}
