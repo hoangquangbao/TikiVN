@@ -237,7 +237,8 @@ struct MetaData: Codable {
 }
 
 // MARK: - Item
-struct Item: Codable {
+struct Item: Codable, Identifiable {
+    let id = UUID()
     let title: String?
     let categoryID: Int?
     let images: [String]?
