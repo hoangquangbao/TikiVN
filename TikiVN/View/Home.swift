@@ -138,13 +138,6 @@ struct Home: View {
         } label: {
             
             HStack(spacing: 8){
-                
-//                Image(systemName: icon)
-//                    .resizable()
-//                    .aspectRatio(contentMode: .fit)
-//                    .frame(width: 27, height: 27)
-//                    .cornerRadius(10)
-                
                 Text(title)
                     .font(.system(size: 12))
                     .fontWeight(.bold)
