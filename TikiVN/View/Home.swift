@@ -245,17 +245,17 @@ struct Home: View {
                     HStack(spacing: 0) {
                         ForEach(1...5, id: \.self){index in
                             Image(systemName: "star.fill")
-                                .font(.system(size: 10))
+                                .font(.system(size: 7))
                                 .foregroundColor(Int(item.ratingAverage!) >= index ? .yellow : .gray.opacity(0.2))
                         }
                     }
                     
                     Text(" (\(Int(item.ratingAverage!)).0) |")
-                        .font(.system(size: 9))
+                        .font(.system(size: 8))
                         .foregroundColor(.gray)
                     
                     Text((item.quantitySold?.text)!)
-                        .font(.system(size: 12, weight: .bold))
+                        .font(.system(size: 9, weight: .bold))
                         .foregroundColor(.gray)
                 }
                 
