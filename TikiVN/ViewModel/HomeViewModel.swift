@@ -25,10 +25,12 @@ class HomeViewModel: ObservableObject {
     //Category tab
     @Published var categoryTab = ""
     
-    //Item
+    //Notification
+    @Published var notGetDataFromJSON = false
+    
+    //Detail View Properties....
     @Published var currentProduct : Datum?
     @Published var showDetail = false
-    @Published var notGetDataFromJSON = false
     
     
     func parse() {

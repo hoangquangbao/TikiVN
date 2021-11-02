@@ -15,6 +15,6 @@ struct Personal: View {
 
 struct Personal_Previews: PreviewProvider {
     static var previews: some View {
-        Personal()
+        HomeView()
     }
 }

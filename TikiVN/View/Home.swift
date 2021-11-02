@@ -42,8 +42,8 @@ struct Home: View {
                         .frame(height: 45)
                         .foregroundColor(.blue)
             )
-        
-//MARK: - Notification while Get Error Data
+            
+            //MARK: - Notification while Get Error Data
             if baseViewModel.notGetDataFromJSON {
                 
                 VStack(spacing: 0) {
@@ -67,7 +67,7 @@ struct Home: View {
                 .cornerRadius(10)
             }
             
-//MARK: - Category Tab
+            //MARK: - Category Tab
             
             ScrollView(.horizontal, showsIndicators: false){
                 
@@ -87,19 +87,7 @@ struct Home: View {
                 }
             }
             
-//MARK: - Search Product
-//            HStack(spacing: 15){
-//
-//                Image(systemName: "magnifyingglass")
-//                .font(.title2)
-//                .foregroundColor(.gray)
-//
-//                TextField("Bạn tìm gì hôm nay?", text: $baseViewModel.search)
-//            }
-//            .padding(.horizontal)
-//
-            
-//MARK: - Product View
+            //MARK: - Product View
             
             let columns = Array(repeating: GridItem(.flexible(), spacing: 4), count: 2)
             
@@ -126,9 +114,13 @@ struct Home: View {
         .onAppear {
             baseViewModel.parse()
         }
+        
+        .overlay(
+            DetailView(animation: animation)
+                .environmentObject(baseViewModel))
     }
     
-//MARK: - func{...} for Category Tab
+    //MARK: - func{...} for Category Tab
     
     @ViewBuilder
     func CategoryButton(title: String) -> some View {
@@ -148,62 +140,32 @@ struct Home: View {
             .background(
                 
                 ZStack{
-                
-                //Transition Slider....
-                if baseViewModel.categoryTab == title{
                     
-                    RoundedRectangle(cornerRadius: 5)
-                        .fill(Color.white.opacity(0.3))
-                    
-                    // Dùng để di chuyển hình nền của các Tab
-                        .matchedGeometryEffect(id: "TAB", in: animation)
-
+                    //Transition Slider....
+                    if baseViewModel.categoryTab == title{
+                        
+                        RoundedRectangle(cornerRadius: 5)
+                            .fill(Color.white.opacity(0.3))
+                        
+                        // Dùng để di chuyển hình nền của các Tab
+                            .matchedGeometryEffect(id: "TAB", in: animation)
+                    }
                 }
-            }
             )
         }
     }
-
-//MARK: - func{...} for Product View
+    
+    //MARK: - func{...} for Product View
     
     func CardView(item: Datum) -> some View {
         
         VStack(alignment: .leading, spacing: 1){
             
-            //            ZStack(alignment: .top) {
-            //
-            //                WebImage(url: URL(string: item.thumbnailURL!))
-            //                    .resizable()
-            //                    .aspectRatio(contentMode: .fit)
-            //                    .frame(height: 250)
-            //
-            //                HStack{
-            //
-            //                    if item.badges?[0].code == "tikinow" {
-            //                        Image("tikinow")
-            //                            .resizable()
-            //                            .aspectRatio(contentMode: .fit)
-            //                            .frame(height: 12, alignment: .leading)
-            //                    }
-            //
-            //                    Spacer()
-            //
-            //                    Button(action: {
-            //
-            //                    }) { Image(systemName: "plus")
-            //                            .padding(2)
-            //                            .foregroundColor(.white)
-            //                            .background(Color.pink)
-            //                            .clipShape(Circle())
-            //                            .frame(height: 8, alignment: .trailing)
-            //                    }
-            //                }
-            //            }
-            
             WebImage(url: URL(string: item.thumbnailURL!))
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(height: 250)
+                .matchedGeometryEffect(id: item.id, in: animation)
                 .overlay(
                     HStack{
                         
@@ -211,7 +173,7 @@ struct Home: View {
                             Image("tikinow")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
-                                //.frame(height: 12, alignment: .leading)
+                            //.frame(height: 12, alignment: .leading)
                         }
                         
                         Spacer()
@@ -223,12 +185,10 @@ struct Home: View {
                                 .foregroundColor(.white)
                                 .background(Color.pink)
                                 .clipShape(Circle())
-                                //.frame(height: 8, alignment: .trailing)
                         }
                     }
                         .frame(maxWidth: .infinity, maxHeight: 12, alignment: .top)
                         .padding(.top, 3)
-                    //                    .padding(.horizontal, 5)
                     ,alignment: .top
                 )
             
@@ -236,7 +196,6 @@ struct Home: View {
                 
                 Text(item.name!)
                     .font(.system(size: 12, weight: .semibold))
-                //                    .font(.system(size: 14))
                     .lineLimit(2)
                     .lineSpacing(3)
                 
@@ -265,7 +224,6 @@ struct Home: View {
             }.offset(y: -15)
         }
         .padding(5)
-        //        .padding(.bottom,5)
         .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
     }
 }

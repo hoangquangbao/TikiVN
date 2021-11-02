@@ -28,8 +28,8 @@ struct Trend: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 
                 HStack(spacing: 10) {
-                    //WebImage(url: baseViewModel.metaDataItems)
                     ForEach(baseViewModel.metaDataItems){item in
+                        
                         Category(item: item)
                     }
                 }
@@ -52,24 +52,20 @@ struct Trend: View {
                                     baseViewModel.showDetail = true
                                 }
                             }
-                    
+                    }
                 }
             }
+            .padding(4)
+            .padding(.bottom, 15)
         }
-        .padding(4)
-        .padding(.bottom, 15)
-            
-            
-            
-            
-        }
-        //.ignoresSafeArea()
-    
         
+        .overlay(
+            DetailView(animation: animation)
+                .environmentObject(baseViewModel))
     }
-
-//MARK: - func{...} for Category Tab
-
+    
+    //MARK: - func{...} for Category Tab
+    
     func Category(item: Item) -> some View {
         
         Button {
@@ -96,79 +92,76 @@ struct Trend: View {
     }
     
     //MARK: - func{...} for Product View
+    
+    func CardView(item: Datum) -> some View {
         
-        func CardView(item: Datum) -> some View {
+        VStack(alignment: .leading, spacing: 1){
             
-            VStack(alignment: .leading, spacing: 1){
-                
-                WebImage(url: URL(string: item.thumbnailURL!))
-                    .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(height: 250)
-                    .overlay(
-                        HStack{
-                            
-                            if item.badges?[0].code == "tikinow" {
-                                Image("tikinow")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    //.frame(height: 12, alignment: .leading)
-                            }
-                            
-                            Spacer()
-                            
-                            Button(action: {
-                                
-                            }) { Image(systemName: "plus")
-                                    .padding(2)
-                                    .foregroundColor(.white)
-                                    .background(Color.pink)
-                                    .clipShape(Circle())
-                                    //.frame(height: 8, alignment: .trailing)
-                            }
-                        }
-                            .frame(maxWidth: .infinity, maxHeight: 12, alignment: .top)
-                            .padding(.top, 3)
-                        //                    .padding(.horizontal, 5)
-                        ,alignment: .top
-                    )
-                
-                VStack(alignment: .leading, spacing: 6) {
-                    
-                    Text(item.name!)
-                        .font(.system(size: 12, weight: .semibold))
-                    //                    .font(.system(size: 14))
-                        .lineLimit(2)
-                        .lineSpacing(3)
-                    
-                    HStack(spacing: 1){
+            WebImage(url: URL(string: item.thumbnailURL!))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(height: 250)
+                .matchedGeometryEffect(id: item.id, in: animation)
+                .overlay(
+                    HStack{
                         
-                        HStack(spacing: 0) {
-                            ForEach(1...5, id: \.self){index in
-                                Image(systemName: "star.fill")
-                                    .font(.system(size: 7))
-                                    .foregroundColor(Int(item.ratingAverage!) >= index ? .yellow : .gray.opacity(0.2))
-                            }
+                        if item.badges?[0].code == "tikinow" {
+                            Image("tikinow")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            //.frame(height: 12, alignment: .leading)
                         }
                         
-                        Text(" (\(Int(item.ratingAverage!)).0) |")
-                            .font(.system(size: 8))
-                            .foregroundColor(.gray)
+                        Spacer()
                         
-                        Text((item.quantitySold?.text)!)
-                            .font(.system(size: 9, weight: .bold))
-                            .foregroundColor(.gray)
+                        Button(action: {
+                            
+                        }) { Image(systemName: "plus")
+                                .padding(2)
+                                .foregroundColor(.white)
+                                .background(Color.pink)
+                                .clipShape(Circle())
+                        }
+                    }
+                        .frame(maxWidth: .infinity, maxHeight: 12, alignment: .top)
+                        .padding(.top, 3)
+                    ,alignment: .top
+                )
+            
+            VStack(alignment: .leading, spacing: 6) {
+                
+                Text(item.name!)
+                    .font(.system(size: 12, weight: .semibold))
+                    .lineLimit(2)
+                    .lineSpacing(3)
+                
+                HStack(spacing: 1){
+                    
+                    HStack(spacing: 0) {
+                        ForEach(1...5, id: \.self){index in
+                            Image(systemName: "star.fill")
+                                .font(.system(size: 7))
+                                .foregroundColor(Int(item.ratingAverage!) >= index ? .yellow : .gray.opacity(0.2))
+                        }
                     }
                     
-                    Text("\(item.price!) đ")
-                        .font(.system(size: 15, weight: .semibold))
+                    Text(" (\(Int(item.ratingAverage!)).0) |")
+                        .font(.system(size: 8))
+                        .foregroundColor(.gray)
                     
-                }.offset(y: -15)
-            }
-            .padding(5)
-            //        .padding(.bottom,5)
-            .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
+                    Text((item.quantitySold?.text)!)
+                        .font(.system(size: 9, weight: .bold))
+                        .foregroundColor(.gray)
+                }
+                
+                Text("\(item.price!) đ")
+                    .font(.system(size: 15, weight: .semibold))
+                
+            }.offset(y: -15)
         }
+        .padding(5)
+        .background(Color.white, in: RoundedRectangle(cornerRadius: 12))
+    }
 }
 
 struct Trend_Previews: PreviewProvider {

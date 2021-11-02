@@ -10,16 +10,8 @@ import SwiftUI
 struct HomeView: View {
     
     @StateObject var baseData = HomeViewModel()
-   
-    
-    //Hiding Tab bar...
-//    init(){
-//
-//        UITabBar.appearance().isHidden = true
-//    }
     
     var body: some View {
-        
         
         TabView(selection: $baseData.currentTab){
             Home()
@@ -43,16 +35,11 @@ struct HomeView: View {
                         .ignoresSafeArea()
                 )
                 .tag(Tab.Trend)
-
+            
             Category()
                 .environmentObject(baseData)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
-                .background(
-                    Image("background_color")
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .ignoresSafeArea()
-                )
+                .background(.gray.opacity(0.2))
                 .tag(Tab.Category)
             
             Personal()
@@ -89,6 +76,22 @@ struct HomeView: View {
                         .padding(18)
                         .background(.white)
                         .clipShape(Circle())
+                        .shadow(color: .black.opacity(0.2),
+                                radius: 0.5,
+                                x: 0.5,
+                                y: -0.5)
+                        .shadow(color: .black,
+                                radius: 0.5,
+                                x: 0.5,
+                                y: 0.5)
+                        .shadow(color: .black,
+                                radius: 0.5,
+                                x: -0.5,
+                                y: 0.5)
+                        .shadow(color: .black,
+                                radius: 0.5,
+                                x: -0.5,
+                                y: -0.5)
                 }
                 .offset(y: -25)
                 
@@ -97,13 +100,16 @@ struct HomeView: View {
                     .offset(x: 10)
                 TabButton(Tab: .Personal)
             }
-                .offset(y: 20)
+                .offset(y: 15)
                 .background(
                     Color.white.clipShape(CustomCurveShape())
                         .offset(y: 20)
-                        .shadow(color: .white, radius: 2, x: 0, y: -5)
-                        .edgesIgnoringSafeArea(.bottom)
+                        .shadow(color: .black.opacity(0.5), radius: 2, x: 0, y: -2)
+                    //.edgesIgnoringSafeArea(.bottom)
+                        .ignoresSafeArea(.container, edges: .bottom)
                 )
+            //hidding tab bar when DetailView open
+                .offset(y: baseData.showDetail ? 200 : 0)
             ,alignment: .bottom
         )
     }
