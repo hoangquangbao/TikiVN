@@ -76,7 +76,7 @@ struct HomeView: View {
                         .padding(18)
                         .background(.white)
                         .clipShape(Circle())
-                        .shadow(color: .black.opacity(0.2),
+                        .shadow(color: .black,
                                 radius: 0.5,
                                 x: 0.5,
                                 y: -0.5)

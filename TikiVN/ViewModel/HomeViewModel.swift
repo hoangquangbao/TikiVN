@@ -14,8 +14,6 @@ class HomeViewModel: ObservableObject {
     @Published var data : [Datum] = []
     @Published var metaData : MetaData?
     @Published var metaDataItems : [Item] = []
-//    @Published var metaDataImages : [String] = []
-
 
     @Published var search = ""
     
@@ -60,7 +58,6 @@ class HomeViewModel: ObservableObject {
                     self.data = (result.data?.data)!
                     self.metaData = result.data?.metaData
                     self.metaDataItems = (result.data?.metaData?.items)!
-//                    self.metaDataImages = result.data?.metaData?.items.im
                 }
             } catch {
                 self.notGetDataFromJSON = true

@@ -24,8 +24,13 @@ struct Category: View {
                 Image(systemName: "magnifyingglass")
                     .font(.title2)
                     .foregroundColor(.gray)
+                    .padding(.horizontal)
                 
                 TextField("Sản phẩm, thương hiệu và mọi thứ bạn cần...   ", text: $baseViewModel.search)
+//                    .onTapGesture {
+//                        baseViewModel.showDetail = false
+//                    }
+
             }
             .padding(.vertical)
             .frame(maxWidth: .infinity, alignment: .center)
@@ -37,15 +42,19 @@ struct Category: View {
                     VStack(alignment: .leading, spacing: 0) {
                         ForEach(baseViewModel.metaDataItems){item in
                             Category(item: item)
+                                .onTapGesture {
+                                    withAnimation {
+                                        baseViewModel.showDetail = true
+                                    }
+                                }
                         }
                     }
                 }
                 
                 Spacer()
                 
-                Text("Note:Show category of product in here    ")
+                Text("Note: Show category of product in here    ")
                     .font(.system(size: 12))
-                    .foregroundColor(.red)
             }
         }
     }
@@ -59,16 +68,21 @@ struct Category: View {
                 WebImage(url: URL(string: item.images![0]))
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    .padding()
+                    .padding(5)
                 
                 Text(item.title!)
-                    .font(.system(size: 10))
+                    .font(.system(size: 8, weight: .bold))
+                    .foregroundColor(.blue)
                     .lineLimit(2)
                     .foregroundColor(.black)
+                    .padding(.bottom, 5)
             }
             //.padding(4)
             .frame(width: 100, height: 100, alignment: .center)
-            .background(.white)
+            .background(
+                Color.white
+                    .shadow(color: .black.opacity(0.9), radius: 1, x: 2, y: 0)
+            )
         }
     }
 }
