@@ -1,6 +1,7 @@
 # TikiVN App
 
-<img width="302" alt="Screen Shot 2021-11-06 at 22 15 40" src="https://user-images.githubusercontent.com/66858640/140614637-bc376b11-2211-495d-91bf-2323e2325a08.png"> <img width="301" alt="Screen Shot 2021-11-06 at 22 16 04" src="https://user-images.githubusercontent.com/66858640/140614656-4aa16170-c533-4eb8-973c-128023be0520.png">
+<img width="746" alt="Screen Shot 2021-12-31 at 20 17 00" src="https://user-images.githubusercontent.com/66858640/147825395-78fb749a-ae68-4433-beba-1b82c86edc76.png">
+
 
 ## Một số trang web hỗ trợ trong quá trình làm:
 1. Định hình cấu trúc file JSON: https://app.quicktype.io/
